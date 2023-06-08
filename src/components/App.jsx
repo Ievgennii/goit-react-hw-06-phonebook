@@ -10,12 +10,6 @@ const App = () => {
   const filter = useSelector(state => state.filter);
   const contacts = useSelector(state => state.contacts);
 
-  // const filterContact = e => {
-  //   const filteredContacts = contacts.filter(contact =>
-  //     contact.name.toLowerCase().includes(filtered.toLowerCase())
-  //   );
-  //   return filteredContacts;
-  // };
 
   const getVisibleContacts = () => {
     const normalizedFilter = filter.toLowerCase();

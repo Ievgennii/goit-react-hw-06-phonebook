@@ -3,6 +3,7 @@ import css from './Contacts.module.css';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { add } from 'redux/sliceContact';
+import { getContacts } from 'redux/selectors';
 import Notiflix from 'notiflix';
 
 const ContactForm = () => {
@@ -32,7 +33,7 @@ const ContactForm = () => {
     setName('');
     setNumber('');
   };
-  const contacts = useSelector(state => state.contacts);
+  const contacts = useSelector(getContacts);
 
   return (    
       <form

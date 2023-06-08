@@ -1,10 +1,11 @@
 import React from 'react';
 import css from './Contacts.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { qwery } from 'redux/sliceFilter';
+import { setFilter } from 'redux/sliceFilter';
+import { getFilter } from 'redux/selectors';
 
 function Filter() {
-  const filter = useSelector(state => state.filter);
+  const filter = useSelector(getFilter);
   const dispatch = useDispatch();
   return (
     <div className={css.filter}>
@@ -15,7 +16,7 @@ function Filter() {
           className={css.input}
           type="text"
           value={filter}
-          onChange={evt => dispatch(qwery(evt.currentTarget.value))}
+          onChange={evt => dispatch(setFilter(evt.currentTarget.value))}
         />
       </label>
     </div>
