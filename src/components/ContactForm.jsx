@@ -7,8 +7,8 @@ import { getContacts } from 'redux/selectors';
 import Notiflix from 'notiflix';
 
 const ContactForm = () => {
-  const dispatch = useDispatch();
-  const [name, setName] = useState('');
+  const dispatch = useDispatch();//Хук useDispatch используется для получения функции dispatch из Redux для отправки actions в store.
+  const [name, setName] = useState('');//Хук useState используется для создания состояния name, которое инициализируется пустой строкой, и функции setName для обновления значения name.
   const [number, setNumber] = useState('');
 
   const handleSubmit = e => {
@@ -33,7 +33,7 @@ const ContactForm = () => {
     setName('');
     setNumber('');
   };
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(getContacts);//Хук useSelector используется для получения значения contacts из Redux store с помощью селектора getContacts.
 
   return (
     <form className={css.form} onSubmit={handleSubmit}>
@@ -72,3 +72,15 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+
+
+//Функция handleSubmit вызывается при отправке формы. Она предотвращает стандартное поведение формы, 
+// проверяет, есть ли контакт с таким же именем в массиве контактов (contacts), и если нет, то отправляет 
+// action add с именем и номером контакта через dispatch. Затем вызывается функция reset, 
+// которая сбрасывает значения name и number.
+
+// Функция handleChange вызывается при изменении значений полей формы. Она обновляет соответствующие 
+// состояния name или number на основе ввода пользователя
+
+// Функция reset сбрасывает значения name и number в пустые строки.
+

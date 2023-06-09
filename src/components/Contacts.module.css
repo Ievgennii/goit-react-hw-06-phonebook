@@ -12,12 +12,12 @@
   cursor: pointer;
 }
 
-.button:active{
+/* .button:hover{
   background-color: blue;
   color: white;
-}
+} */
 
-.button:hover{
+.button:active{
   background-color: blue;
   color: white;
 }
